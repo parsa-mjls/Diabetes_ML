@@ -1,0 +1,29 @@
+from sklearn.neighbors import KNeighborsClassifier
+
+knn = KNeighborsClassifier(n_neighbors = 8)
+knn.fit(x_train , y_train)
+
+
+y_pred_train_knn = knn.predict(x_train)
+y_pred_test_knn = knn.predict(x_test)
+
+from sklearn.metrics import accuracy_score , precision_score , recall_score , confusion_matrix
+
+acc_train_knn = accuracy_score( y_train , y_pred_train_knn)
+acc_test_knn = accuracy_score( y_test , y_pred_test_knn)
+
+acc_train_knn , acc_test_knn
+
+
+confusion_matrix(y_test , y_pred_test_knn)
+
+confusion_matrix(y_train , y_pred_train_knn)
+
+p_train_knn = precision_score (y_train , y_pred_train_knn)
+p_test_knn = precision_score (y_test , y_pred_test_knn)
+
+p_train_knn , p_test_knn
+
+r_test_knn = recall_score( y_test , y_pred_test_knn)
+
+r_test_knn

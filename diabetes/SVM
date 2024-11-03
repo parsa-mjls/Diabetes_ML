@@ -1,0 +1,33 @@
+from sklearn import svm
+
+model_svm = svm.SVC(kernel="sigmoid") # linear / rbf/ sigmoid
+model_svm.fit (x_train , y_train)
+
+
+
+
+y_pred_train_svm = model_svm.predict(x_train)
+y_pred_test_svm = model_svm.predict(x_test)
+
+
+
+from sklearn.metrics import accuracy_score ,precision_score , recall_score
+
+
+
+acc_train_svm = accuracy_score(y_train , y_pred_train_svm)
+acc_test_svm = accuracy_score(y_test , y_pred_test_svm)
+
+acc_train_svm , acc_test_svm
+
+
+
+p_svm = precision_score( y_test , y_pred_test_svm)
+
+
+
+r_svm = recall_score(y_test , y_pred_test_svm)
+
+
+
+

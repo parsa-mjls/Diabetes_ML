@@ -1,0 +1,60 @@
+from sklearn.tree import DecisionTreeClassifier
+
+dt = DecisionTreeClassifier(max_depth = 16 , min_samples_split= 4 , min_samples_leaf= 2)
+dt.fit(x_train , y_train)
+
+
+from sklearn.ensemble import RandomForestClassifier
+
+rf = RandomForestClassifier( n_estimators = 100 , max_depth= 8)
+rf.fit(x_train , y_train)
+
+
+
+y_pred_train_dt = dt.predict(x_train)
+y_pred_train_rf = rf.predict(x_train)
+
+y_pred_test_dt = dt.predict(x_test)
+y_pred_test_rf = rf.predict(x_test)
+
+from sklearn.metrics import accuracy_score
+
+acc_train_dt = accuracy_score(y_train, y_pred_train_dt)
+acc_train_rf = accuracy_score(y_train , y_pred_train_rf)
+
+acc_train_dt , acc_train_rf
+
+
+
+acc_test_dt = accuracy_score(y_test, y_pred_test_dt)
+acc_test_rf = accuracy_score(y_test , y_pred_test_rf)
+
+acc_test_dt , acc_test_rf
+
+
+
+acc_test_dt = accuracy_score(y_test, y_pred_test_dt)
+acc_test_rf = accuracy_score(y_test , y_pred_test_rf)
+
+acc_test_dt , acc_test_rf
+
+
+
+from sklearn.metrics import precision_score
+
+p_test_dt = precision_score(y_test, y_pred_test_dt)
+p_test_rf = precision_score(y_test , y_pred_test_rf)
+
+p_test_dt , p_test_rf
+
+
+
+
+from sklearn.metrics import recall_score
+
+re_test_dt = recall_score(y_test, y_pred_test_dt)
+re_test_rf = recall_score(y_test , y_pred_test_rf)
+
+re_test_dt , re_test_rf
+
+
